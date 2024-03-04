@@ -8,10 +8,80 @@ body{
     background-color: var(--color-primary);
 }
 .container{
+    display: grid;
+    grid-template-columns: repeat(9, fr);
+    grid-template-rows: repeat(12, fr);
+    grid-gap: 8px;
+    grid-template-areas: 
+    "menu menu menu menu menu menu menu menu menu menu menu menu"
+    "notificacion notificacion notificacion notificacion sales sales sales sales sales sales balance balance"
+    "notificacion notificacion notificacion notificacion sales sales sales sales sales sales balance balance"
+    "week week week week sales sales sales sales sales sales balance balance"
+    "week week week week sales sales sales sales sales sales devs devs"
+    "week week week week sales sales sales sales sales sales devs devs"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    ;
     width: 800px;
     height: 600px;
     margin: 15px auto;
+    /* background-color: var(--color-secundary); */
+    /* border-radius: 5px;
+    box-shadow: var(--color-shadow); */
+}
+.container div{
     background-color: var(--color-secundary);
+}
+.item1{
+    grid-area: menu;
     border-radius: 5px;
-    box-shadow: var(--color-shadow);
+}
+.item2{
+    grid-area: notificacion;
+    border-radius: 5px;
+}
+.item3{
+    grid-area: sales;
+    border-radius: 5px;
+}
+.item4{
+    grid-area: balance;
+    border-radius: 5px;
+}
+.item5{
+    grid-area: week;
+    border-radius: 5px;
+}
+.item6{
+    grid-area: devs;
+    border-radius: 5px;
+}
+.item7{
+    grid-area: product;
+    border-radius: 5px;
+}
+.item8{
+    grid-area: timeline;
+    border-radius: 5px;
+}
+
+
+@media  (width < 600px) {
+    .container{
+        margin: 0;
+        width: 100%;
+        grid-template-columns: repeat(2, fr);
+        grid-template-areas: 
+        "menu menu"
+        "notificacion notificacion"
+        "sales sales"
+        "balance week"
+        "devs devs"
+        "product product"
+        "timeline timeline"
+        ". ."
+        ;
+}
 }
